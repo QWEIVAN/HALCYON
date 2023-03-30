@@ -382,110 +382,110 @@ function createBind(n, o, p) {
                     onClick: function (a) {
                         try {
                             if (p == "hitbox") {
-                                if (!hitbox) {
-                                    hitbox = !0;
+                                if (!hitbox[0]) {
+                                    hitbox[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    hitbox = !1;
+                                    hitbox[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "car") {
-                                if (!cda) {
-                                    cda = !0;
+                                if (!cda[0]) {
+                                    cda[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    cda = !1;
+                                    cda[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "ai") {
-                                if (!aimbot) {
-                                    aimbot = !0;
+                                if (!aimbot[0]) {
+                                    aimbot[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    aimbot = !1;
+                                    aimbot[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "net") {
-                                if (!behind) {
-                                    behind = !0;
+                                if (!behind[0]) {
+                                    behind[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    behind = !1;
+                                    behind[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "over") {
-                                if (!hover) {
-                                    hover = !0;
+                                if (!hover[0]) {
+                                    hover[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    hover = !1;
+                                    hover[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "hitboost") {
-                                if (!hitboost) {
-                                    hitboost = !0;
+                                if (!hitboost[0]) {
+                                    hitboost[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    hitboost = !1;
+                                    hitboost[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "tspin") {
-                                if (!tspin) {
-                                    tspin = !0;
+                                if (!tspin[0]) {
+                                    tspin[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    tspin = !1;
+                                    tspin[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "hitaim") {
-                                if (!hitaim) {
-                                    hitaim = !0;
+                                if (!hitaim[0]) {
+                                    hitaim[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    hitaim = !1;
+                                    hitaim[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "tpauraed") {
-                                if (!tpauraed) {
-                                    tpauraed = !0;
+                                if (!tpauraed[0]) {
+                                    tpauraed[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    tpauraed = !1;
+                                    tpauraed[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "killauraed") {
-                                if (!killauraed) {
-                                    killauraed = !0;
+                                if (!killauraed[0]) {
+                                    killauraed[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    killauraed = !1;
+                                    killauraed[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "back") {
-                                if (!back) {
-                                    back = !0;
+                                if (!back[0]) {
+                                    back[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    back = !1;
+                                    back[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
                             if (p == "rndaura") {
-                                if (!rndaura) {
-                                    rndaura = !0;
+                                if (!rndaura[0]) {
+                                    rndaura[0] = !0;
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
-                                    rndaura = !1;
+                                    rndaura[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
@@ -657,6 +657,15 @@ if (p == "tower") {
                                     m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
                                 } else {
                                     bfly = !1;
+                                    m.setTextColor(android.graphics.Color.WHITE)
+                                }
+                            }
+                            if (p == "spider") {
+                                if (!spider[0]) {
+                                    spider[0] = !0;
+                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                } else {
+                                    spider[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
@@ -1486,7 +1495,7 @@ function rptask() {
                                 }
                             }
                         }
-                        if (aimbot == !0) {
+                        if (aimbot[0] == !0) {
                             if (aimtarget != -1) {
                                 if (getDistance(aimtarget) <= intaim) {
                                     aim(aimtarget)
@@ -1548,25 +1557,23 @@ var mPosX = 0;
 var mPosX1 = 0;
 var mPosY = 0;
 var mPosY1 = 0;
-var hitbox = !1;
+var hitbox = [!1,!1];
 var collisionbox = !1;
 var colisionx = 7;
 var colisiony = 10;
 var distance = 6;
 var postionhix = 0;
 var postionhiy = 0;
-var bindh = !1;
-var aimbot = !1;
+var aimbot = [!1,!1];
 var sensitivity = 80;
 var time = 13;
 var head = !1;
 var body = !0;
 var postionaix = 0;
 var postionaiy = 0;
-var binda = !1;
 var akb = !1;
 var bindkb = !1;
-var behind = !1;
+var behind = [!1,!1];
 var gapg = 2.1;
 var distanc = 5;
 var bindb = !1;
@@ -1575,12 +1582,9 @@ var player = !1;
 var mobs = !1;
 var distancesss = 8;
 var bindt = !1;
-var cda = !1;
-var bindcda = !1;
-var hitboost = !1;
-var hitboostbind = !1;
-var hitaim = !1;
-var hitaimbind = !1;
+var cda = [!1,!1];
+var hitboost = [!1,!1];
+var hitaim = [!1,!1];
 var Flight = !1;
 var speed = 0.5;
 var postionfx = 0;
@@ -1592,18 +1596,12 @@ var postionfly = 0;
 var bindfl = !1;
 var wall = !1;
 var wallbind = !1;
-var tpauraed = !1;
-var tpauraedbind = !1;
+var tpauraed = [!1,!1];
 var scall = !1;
 var scallbind = !1;
-var killauraed = !1;
-var killauraedbind = !1;
-var hitxxx = 2.1;
-hitTimer = hitxxx;
-var back = !1;
-var backbind = !1;
-var rndaura = !1;
-var rndaurabind = !1;
+var killauraed = [!1,!1];
+var back = [!1,!1];
+var rndaura = [!1,!1];
 var bowaim = !1;
 var bowaimbind = !1;
 var baimRange = 150;
@@ -1613,15 +1611,12 @@ var crit = !1;
 var critbind = !1;
 var vel = 1;
 var i = 0;
-var behindbind = !1;
-var hover = !1;
-var hoverbind = !1;
-var tspin = !1;
+var hover = [!1,!1];
+var tspin = [!1,!1];
 var range = 3;
 var spins = 2.1;
 var targetsp = -1;
 var fakeYaw = 0;
-var tspinbind = !1;
 var beh2 = !1;
 var beh2bind = !1;
 var gap = 2.1;
@@ -1684,6 +1679,8 @@ var nukerbind = !1;
 var bfly = !1;
 var bflybind = !1;
 var bunny = 10;
+var aback = [0,0];
+var spider = [!1,!1];
 var screenChangeHook = (screen) => {
     sscreen = screen;
     if (screen.toString().indexOf("progress_screen") > -1) {
@@ -2264,16 +2261,16 @@ function menus() {
                 q.setTextColor(Color.WHITE);
                 q.setTextSize(14);
                 q.setTypeface(font);
-                if (hitbox == !0) {
+                if (hitbox[0] == !0) {
                     q.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 q.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!hitbox) {
-                            hitbox = !0;
+                        if (!hitbox[0]) {
+                            hitbox[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            hitbox = !1;
+                            hitbox[0] = !1;
                             Entity.setCollisionSize(Player.getPointedEntity(), 1, 2);
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="white">OFF</font></b>')))
                         }
@@ -2281,11 +2278,11 @@ function menus() {
                 }));
                 q.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!bindh) {
-                            bindh = !0;
+                        if (!hitbox[1]) {
+                            hitbox[1] = !0;
                             createBind("H", "Hit", "hitbox")
                         } else {
-                            bindh = !1;
+                            hitbox[1] = !1;
                             eval("Hit.dismiss()")
                         }
                         return !0
@@ -2338,27 +2335,27 @@ function menus() {
                 x.setTextColor(Color.WHITE);
                 x.setTextSize(14);
                 x.setTypeface(font);
-                if (cda == !0) {
+                if (cda[0] == !0) {
                     x.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 x.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!cda) {
-                            cda = !0;
+                        if (!cda[0]) {
+                            cda[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            cda = !1;
+                            cda[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 x.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!bindcda) {
+                        if (!cda[1]) {
                             createBind('CD', 'CORD', 'car');
-                            bindcda = !0
+                            cda[1] = !0
                         } else {
-                            bindcda = !1;
+                            cda[1] = !1;
                             eval("CORD.dismiss()")
                         }
                         return !0
@@ -2370,27 +2367,27 @@ function menus() {
                 y.setTextColor(Color.WHITE);
                 y.setTextSize(14);
                 y.setTypeface(font);
-                if (aimbot == !0) {
+                if (aimbot[0] == !0) {
                     y.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 y.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!aimbot) {
-                            aimbot = !0;
+                        if (!aimbot[0]) {
+                            aimbot[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            aimbot = !1;
+                            aimbot[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 y.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!binda) {
+                        if (!aimbo) {
                             createBind('Aim', 'Bot', 'ai');
-                            binda = !0
+                            aimbot[1] = !0
                         } else {
-                            binda = !1;
+                            aimbot[1] = !1;
                             eval("Bot.dismiss()")
                         }
                         return !0
@@ -2423,27 +2420,27 @@ function menus() {
                 B.setTextColor(Color.WHITE);
                 B.setTextSize(14);
                 B.setTypeface(font);
-                if (behind == !0) {
+                if (behind[0] == !0) {
                     B.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 B.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!behind) {
-                            behind = !0;
+                        if (!behind[0]) {
+                            behind[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            behind = !1;
+                            behind[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 B.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!behindbind) {
-                            behindbind = !0;
+                        if (!behind[1]) {
+                            behind[1] = !0;
                             createBind('Beh', 'hind', 'net')
                         } else {
-                            behindbind = !1;
+                            behind[1] = !1;
                             eval("hind.dismiss()")
                         }
                         return !0
@@ -2475,27 +2472,27 @@ function menus() {
                 D.setTextColor(Color.WHITE);
                 D.setTextSize(14);
                 D.setTypeface(font);
-                if (hover == !0) {
+                if (hover[0] == !0) {
                     D.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 D.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!hover) {
-                            hover = !0;
+                        if (!hover[0]) {
+                            hover[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            hover = !1;
+                            hover[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 D.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!hoverbind) {
-                            hoverbind = !0;
+                        if (!hover[1]) {
+                            hover[1] = !0;
                             createBind('Hov', 'hoverw', 'over')
                         } else {
-                            hoverbind = !1;
+                            hover[1] = !1;
                             eval("hoverw.dismiss()")
                         }
                         return !0
@@ -2507,27 +2504,27 @@ function menus() {
                 E.setTextColor(Color.WHITE);
                 E.setTextSize(14);
                 E.setTypeface(font);
-                if (hitboost == !0) {
+                if (hitboost[0] == !0) {
                     E.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 E.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!hitboost) {
-                            hitboost = !0;
+                        if (!hitboost[0]) {
+                            hitboost[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            hitboost = !1;
+                            hitboost[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 E.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!hitboostbind) {
-                            hitboostbind = !0;
+                        if (!hitboost[1]) {
+                            hitboost[1] = !0;
                             createBind('HBO', 'boost', 'hitboost')
                         } else {
-                            hitboostbind = !1;
+                            hitboost[1] = !1;
                             eval("boost.dismiss()")
                         }
                         return !0
@@ -2561,27 +2558,27 @@ function menus() {
                 H.setTextColor(Color.WHITE);
                 H.setTextSize(14);
                 H.setTypeface(font);
-                if (tspin == !0) {
+                if (tspin[0] == !0) {
                     H.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 H.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!tspin) {
-                            tspin = !0;
+                        if (!tspin[0]) {
+                            tspin[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            tspin = !1;
+                            tspin[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 H.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!tspinbind) {
-                            tspinbind = !0;
+                        if (!tspin[1]) {
+                            tspin[1] = !0;
                             createBind('Spin', 'spinb', 'tspin')
                         } else {
-                            tspinbind = !1;
+                            tspin[1] = !1;
                             eval("spinb.dismiss()")
                         }
                         return !0
@@ -2634,27 +2631,27 @@ function menus() {
                 M.setTextColor(Color.WHITE);
                 M.setTextSize(14);
                 M.setTypeface(font);
-                if (hitaim == !0) {
+                if (hitaim[0] == !0) {
                     M.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 M.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!hitaim) {
-                            hitaim = !0;
+                        if (!hitaim[0]) {
+                            hitaim[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            hitaim = !1;
+                            hitaim[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 M.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!hitaimbind) {
-                            hitaimbind = !0;
+                        if (!hitaim[1]) {
+                            hitaim[1] = !0;
                             createBind('HAim', 'haimb', 'hitaim')
                         } else {
-                            hitaimbind = !1;
+                            hitaim[1] = !1;
                             eval("haimb.dismiss()")
                         }
                         return !0
@@ -2666,27 +2663,27 @@ function menus() {
                 N.setTextColor(Color.WHITE);
                 N.setTextSize(14);
                 N.setTypeface(font);
-                if (tpauraed == !0) {
+                if (tpauraed[0] == !0) {
                     N.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 N.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!tpauraed) {
-                            tpauraed = !0;
+                        if (!tpauraed[0]) {
+                            tpauraed[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            tpauraed = !1;
+                            tpauraed[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 N.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!tpauraedbind) {
-                            tpauraedbind = !0;
+                        if (!tpauraed[1]) {
+                            tpauraed[1] = !0;
                             createBind('Tpau', 'tpb', 'tpauraed')
                         } else {
-                            tpauraedbind = !1;
+                            tpauraed[1] = !1;
                             eval("tpb.dismiss()")
                         }
                         return !0
@@ -2719,27 +2716,27 @@ function menus() {
                 Q.setTextColor(Color.WHITE);
                 Q.setTextSize(14);
                 Q.setTypeface(font);
-                if (killauraed == !0) {
+                if (killauraed[0] == !0) {
                     Q.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 Q.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!killauraed) {
-                            killauraed = !0;
+                        if (!killauraed[0]) {
+                            killauraed[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            killauraed = !1;
+                            killauraed[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 Q.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!killauraedbind) {
-                            killauraedbind = !0;
+                        if (!killauraed[1]) {
+                            killauraed[1] = !0;
                             createBind("thit", "thitb", "killauraed")
                         } else {
-                            killauraedbind = !1;
+                            killauraed[1] = !1;
                             eval("thitb.dismiss()")
                         }
                         return !0
@@ -2751,27 +2748,27 @@ function menus() {
                 R.setTextColor(Color.WHITE);
                 R.setTextSize(14);
                 R.setTypeface(font);
-                if (back == !0) {
+                if (back[0] == !0) {
                     R.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 R.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!back) {
-                            back = !0;
+                        if (!back[0]) {
+                            back[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            back = !1;
+                            back[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 R.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!backbind) {
-                            backbind = !0;
+                        if (!back[1]) {
+                            back[1] = !0;
                             createBind("bac", "bacb", "back")
                         } else {
-                            backbind = !1;
+                            back[1] = !1;
                             eval("bacb.dismiss()")
                         }
                         return !0
@@ -2804,27 +2801,27 @@ function menus() {
                 U.setTextColor(Color.WHITE);
                 U.setTextSize(14);
                 U.setTypeface(font);
-                if (rndaura == !0) {
+                if (rndaura[0] == !0) {
                     U.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                 }
                 U.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        if (!rndaura) {
-                            rndaura = !0;
+                        if (!rndaura[0]) {
+                            rndaura[0] = !0;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
                         } else {
-                            rndaura = !1;
+                            rndaura[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="white">OFF</font></b>')))
                         }
                     }
                 }));
                 U.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!rndaurabind) {
-                            rndaurabind = !0;
+                        if (!rndaura[1]) {
+                            rndaura[1] = !0;
                             createBind("rnd", "rndb", "rndaura")
                         } else {
-                            rndaurabind = !1;
+                            rndaura[1] = !1;
                             eval("rndb.dismiss()")
                         }
                         return !0
@@ -3435,6 +3432,38 @@ function menus() {
                     }
                 }));
                 k.addView(bX);
+                                var sp = new TextView(ctx);
+                sp.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="white">OFF</font></b>')));
+                sp.setTextColor(Color.WHITE);
+                sp.setTextSize(14);
+                sp.setTypeface(font);
+                if (spider[0] == !0) {
+                    sp.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="#A800FF">ON</font></b>')))
+                }
+                sp.setOnClickListener(new android.view.View.OnClickListener({
+                    onClick: function (a) {
+                        if (!spider[0]) {
+                            spider[0] = !0;
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="#A800FF">ON</font></b>')))
+                        } else {
+                            spider[0] = !1;
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="white">OFF</font></b>')))
+                        }
+                    }
+                }));
+                sp.setOnLongClickListener(new android.view.View.OnLongClickListener({
+                    onLongClick: function (v, t) {
+                        if (!spider[1]) {
+                            spider[1] = !0;
+                            createBind("spid", "spd", "spider")
+                        } else {
+                            spider[1] = !1;
+                            eval("spd.dismiss()")
+                        }
+                        return !0
+                    }
+                }));
+                k.addView(sp);
                 var bY = new TextView(ctx);
                 bY.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK2:</font></b><b><font color="white">OFF</font></b>')));
                 bY.setTextColor(Color.WHITE);
@@ -4025,6 +4054,9 @@ function modTick() {
                     }
                 }
             };
+            if (spider[0] == !0 && Utils["Player"]["isCollidedHorizontally"]()) {
+        setVelY(getPlayerEnt(), 0.6)
+    };
             if (bfly == !0) {
                 if (!Utils["Player"]["isOnGround"]()) {
      var B_lat = (Entity.getPitch(getPlayerEnt()) + 90) * Math.PI / 180;
@@ -4042,7 +4074,7 @@ function modTick() {
      }
    }
 };
-            if (targetsp != -1 && tspin == !0) {
+            if (targetsp != -1 && tspin[0] == !0) {
                 var i = targetsp;
                 var j = fakeYaw;
                 if (inRange(j, -180, 180)) {
@@ -4081,7 +4113,7 @@ function modTick() {
             if (Entity["getHealth"](aimtarget) <= 0) {
                 aimtarget = -1
             }
-            if (tspin == !1) {
+            if (tspin[0] == !1) {
                 preventDefault();
                 targetsp = -1
             }
@@ -4089,7 +4121,7 @@ function modTick() {
                 preventDefault();
                 btarget = -1
             }
-            if (aimbot == !1) {
+            if (aimbot[0] == !1) {
                 preventDefault();
                 aimtarget = -1
             }
@@ -4097,14 +4129,14 @@ function modTick() {
                 preventDefault();
                 cortarget = -1
             }
-            if (hitbox == !0) {
+            if (hitbox[0] == !0) {
                 if (hittarget != -1) {
                     var l = hittarget;
                     preventDefault();
                     Entity.setCollisionSize(l, colisionx, colisiony)
                 }
             }
-            if (hitbox == !1) {
+            if (hitbox[0] == !1) {
                 var m = hittarget;
                 if (m == hittarget) {
                     preventDefault();
@@ -4112,23 +4144,27 @@ function modTick() {
                     hittarget = -1
                 }
             }
-            if (akb || Entity["getHealth"](getPlayerEnt()) <= 0) {
-                if (this["tick"] > 0) {
-                    tick--
-                } else {
-                    Entity["setImmobile"](getPlayerEnt(), !1)
-                };
-                if (this["health"] > Entity["getHealth"](getPlayerEnt())) {
-                    Entity["setImmobile"](getPlayerEnt(), !0);
-                    this["tick"] = 1
-                };
-                this["tick"] = 0;
-                this["health"] = Entity["getHealth"](getPlayerEnt())
-            };
+        if (akb == !0) {
+            aback[0] = 0;
+            if (aback[1] > Entity.getHealth(Player.getEntity())) {
+                aback[0] = 1;
+                setVelX(Player.getEntity(), 0);
+                setVelY(Player.getEntity(), 0);
+                setVelZ(Player.getEntity(), 0);
+                Entity.setImmobile(Player.getEntity(), true);
+            }
+            if (aback[0] == 0) {
+                Entity.setImmobile(Player.getEntity(), false);
+            }
+            aback[1] = Entity.getHealth(Player.getEntity());
+            if (aback[0] != 0) {
+                aback[0]--;
+            }
+        }
             if (nuker == !0) {
             Nuker();
             };
-            if (cda == !0) {
+            if (cda[0] == !0) {
                 var o = getPlayerX();
                 var p = getPlayerY();
                 var q = getPlayerZ();
@@ -4178,7 +4214,7 @@ function attackHook(a, v) {
                 killtarget = v
             }
         }
-        if (aimbot) {
+        if (aimbot[0]) {
             if (a == Player.getEntity()) {
                 aimtarget = v
             } else {
@@ -4192,14 +4228,14 @@ function attackHook(a, v) {
                 cortarget = -1
             }
         }
-        if (hitbox) {
+        if (hitbox[0]) {
             if (a == Player.getEntity()) {
                 hittarget = v
             } else {
                 hittarget = -1
             }
         }
-        if (hitbox == !1) {
+        if (hitbox[0] == !1) {
             if (a == Player.getEntity()) {
                 Entity.setCollisionSize(v, 0.8, 2)
             }
@@ -4211,13 +4247,13 @@ function attackHook(a, v) {
                 btarget = -1
             }
         }
-        if (hover) {
+        if (hover[0]) {
             _0x3689x205 = v;
             if (_0x3689x205 != null && getTile(Entity.getX(_0x3689x205), Entity.getY(_0x3689x205) + 2, Entity.getZ(_0x3689x205)) == 0 && getTile(Entity.getX(_0x3689x205), Entity.getY(_0x3689x205) + 3, Entity.getZ(_0x3689x205)) == 0) {
                 setPosition(getPlayerEnt(), Entity.getX(_0x3689x205), Entity.getY(_0x3689x205) + 4, Entity.getZ(_0x3689x205))
             }
         };
-        if (tspin == !0) {
+        if (tspin[0] == !0) {
             if (a == Player.getEntity()) {
                 targetsp = v
             }
@@ -4242,10 +4278,10 @@ function attackHook(a, v) {
                 Entity.setVelZ(getPlayerEnt(), 0)
             }
         }
-        if (killauraed == !0) {
+        if (killauraed[0] == !0) {
             setPosition(getPlayerEnt(), Entity["getX"](v), Entity["getY"](v) + 3, Entity["getZ"](v))
         };
-        if (behind == !0) {
+        if (behind[0] == !0) {
             var g = v
             var x = Entity.getX(g);
             var y = Entity.getY(g);
@@ -4256,7 +4292,7 @@ function attackHook(a, v) {
                 Entity.setPosition(Player.getEntity(), (x + Math.sin(h) * gapg), y + Math.sin(j) * gapg, (z - Math.cos(h) * gapg))
             }
         }
-        if (hitboost == !0) {
+        if (hitboost[0] == !0) {
             if (a == Player.getEntity()) {
                 var j = ((Entity["getPitch"](getPlayerEnt()) + 90) * Math["PI"]) / 180;
                 var h = ((Entity["getYaw"](getPlayerEnt()) + 90) * Math["PI"]) / 180;
@@ -4268,14 +4304,14 @@ function attackHook(a, v) {
                 setVelZ(getPlayerEnt(), Z * seo)
             }
         };
-        hitaim == !0 && (getPlayerEnt(), HitAimAttacked(v));
-        if (tpauraed == !0) {
+        hitaim[0] == !0 && (getPlayerEnt(), HitAimAttacked(v));
+        if (tpauraed[0] == !0) {
             if (a == Player.getEntity()) {
                 Entity.setPosition(Player.getEntity(), Entity.getX(v) + 1, Entity.getY(v) + ses, Entity.getZ(v));
                 setVelY(Player.getEntity(), 0.05)
             }
         }
-        if (back == !0) {
+        if (back[0] == !0) {
             var k = (Entity.getPitch(getPlayerEnt()) + 90) * Math.PI / 180,
                 holly = (Entity.getYaw(getPlayerEnt()) + 90) * Math.PI / 180,
                 petter = Math.sin(k) * Math.cos(holly),
@@ -4283,8 +4319,8 @@ function attackHook(a, v) {
                 greydi = Math.sin(k) * Math.sin(holly);
             setVelX(getPlayerEnt(), petter * -seob), setVelY(getPlayerEnt(), osiris * 0), setVelZ(getPlayerEnt(), greydi * -seob)
         }
-        back == !0 && (setPosition(getPlayerEnt(), Entity.getX(v) + 0, Entity.getY(v) + 0.7, Entity.getZ(v) + 1), setVelY(getPlayerEnt(), 0));
-        if (rndaura == !0) {
+        back[0] == !0 && (setPosition(getPlayerEnt(), Entity.getX(v) + 0, Entity.getY(v) + 0.7, Entity.getZ(v) + 1), setVelY(getPlayerEnt(), 0));
+        if (rndaura[0] == !0) {
             if (a == getPlayerEnt()) {
                 let saketha = [-2, -1, 0, 1, 2];
                 Entity.setPosition(getPlayerEnt(), Entity.getX(v) + saketha[Math.floor(Math.random() * 5) + 0], Entity.getY(v) + saketha[Math.floor(Math.random() * 3) + 2], Entity.getZ(v) + saketha[Math.floor(Math.random() * 5) + 0]);
@@ -4341,14 +4377,14 @@ function leaveGame() {
         if (beh2 == !0) {
             beh2 = !1
         }
-        if (tspin == !0) {
-            tspin = !1
+        if (tspin[0] == !0) {
+            tspin[0] = !1
         }
-        if (hitbox == !0) {
-            hitbox = !1
+        if (hitbox[0] == !0) {
+            hitbox[0] = !1
         }
-        if (aimbot == !0) {
-            aimbot = !1
+        if (aimbot[0] == !0) {
+            aimbot[0] = !1
         }
         if (akb == !0) {
             akb = !1
@@ -4356,8 +4392,8 @@ function leaveGame() {
         if (scall == !0) {
             scall = !1
         }
-        if (rndaura == !0) {
-            rndaura = !1
+        if (rndaura[0] == !0) {
+            rndaura[0] = !1
         }
         if (elist == !0) {
             elist = !1
