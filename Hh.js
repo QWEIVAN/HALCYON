@@ -2383,7 +2383,7 @@ function menus() {
                 }));
                 y.setOnLongClickListener(new android.view.View.OnLongClickListener({
                     onLongClick: function (v, t) {
-                        if (!aimbo) {
+                        if (!aimbot[1]) {
                             createBind('Aim', 'Bot', 'ai');
                             aimbot[1] = !0
                         } else {
