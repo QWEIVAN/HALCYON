@@ -669,6 +669,9 @@ if (p == "tower") {
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
+                            if (p == "move") {
+                            jumper();
+                            }
                         } catch (e) {
                             clientMessage(e + ".#" + e.lineNumber)
                         }
@@ -812,6 +815,17 @@ var KfM = android.app.KeyboardFocusManager;
 var KVd = android.app.KeyEventDispatcher
 var WRAP_CONTENT = RelativeLayout.LayoutParams.WRAP_CONTENT;
 var disTance = 10;
+var move = [!1,!1,3];
+function jumper() {
+        var hit = getYaw() + 90;
+        var hitY = getPitch() - 180;
+        x = Math.cos(hit * (Math.PI / 180));
+        y = Math.sin(hitY * (Math.PI / 180));
+        z = Math.sin(hit * (Math.PI / 180));
+       
+        Entity.setPositionRelative(getPlayerEnt(), x * move[2], y * move[2], z * move[2])
+        
+    };
 
 function showCoordinateGUI() {
     ctx.runOnUiThread(new Runnable({
@@ -3529,6 +3543,29 @@ function menus() {
                     }
                 }));
                 k.addView(bf);
+                                var mv = new TextView(ctx);
+                mv.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="white">OFF</font></b>')));
+                mv.setTextColor(Color.WHITE);
+                mv.setTextSize(14);
+                mv.setTypeface(font);
+                if (move[0] == !0) {
+                    mv.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="#A800FF">ON</font></b>')))
+                }
+                mv.setOnClickListener(new android.view.View.OnClickListener({
+                    onClick: function (a) {
+
+                        if (!move[0]) {
+                            move[0] = !0;
+                            createBind("MOVE","mov","move");
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="#A800FF">ON</font></b>')))
+                        } else {
+                            move[0] = !1;
+                            eval("mov.dismiss()");
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="white">OFF</font></b>')))
+                        }
+                    }
+                }));
+                k.addView(mv);
                 var bZ = new TextView(ctx);
                 bZ.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK:</font></b><b><font color="white">OFF</font></b>')));
                 bZ.setTextColor(Color.WHITE);
