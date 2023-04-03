@@ -1,4 +1,6 @@
 //Если вы смогли расшифровать лоадер,добро пожаловать,иначе,пиздуй отсюдова 
+//добавить fowwol
+
 var GradientDrawable = android.graphics.drawable.GradientDrawable;
 var TextView = android.widget.TextView;
 var Environment = android.os.Environment;
@@ -87,7 +89,38 @@ var Style = R.style;
 var cc8 = !1;
 var isDev = !1;
 var key = "";
-
+function O(value) {
+ try {
+   ctx.runOnUiThread(new Runnable({
+     run : function addItem() {
+       var page = Toast.makeText(ctx, "" + value, Toast.LENGTH_LONG);
+       var view = new LinearLayout(ctx);
+       var text = new TextView(ctx);
+       text.setText("NigerHack_v2.3: " + value);
+       text.setGravity(Gravity.CENTER);
+       text.setTextSize(15);
+       text.setPadding(10, 10, 10, 10);
+       text.setTextColor(Color.WHITE);
+       var color = new GradientDrawable;
+       color.setColor(Color.BLACK);
+       color.setStroke(5, Color.RED);
+       view.addView(text);
+       view.setBackground(color);
+       page.setView(view);
+       page.show();
+     }
+   }));
+ } catch (e) {
+   print(e);
+ }
+};
+function destroyByView(){
+	Level.destroyBlock(Utils.Player.pointedX(),Utils.Player.pointedY(),Utils.Player.pointedZ());};
+var bgB = new GradientDrawable;
+bgB.setColor(Color.BLACK);
+bgB.setStroke(3, Color.RED);
+bgB.setAlpha(100);
+bgB.setCornerRadius(50);
 function urlRequest(link) {  
 let url = new java.net.URL(link);  
 let con = url.openConnection(); 
@@ -141,10 +174,10 @@ catch(e){print("Воспроизведение невозможно.");}
 }
 }));
 builder.create().show();
-}catch(e){clientMessage(e);}
+}catch(e){O(e);}
 }
 }));
-}
+};
 function SETAIM(){
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
@@ -166,7 +199,6 @@ bZ.setPadding(8, 8, 8, 8);
                 
                
                 bZ.setGravity(Gravity.CENTER);
-             //   bZ.setLayoutParams(new LinearLayout.LayoutParams(ctx.getWindowManager().getDefaultDisplay().getWidth() / 4.200, ctx.getWindowManager().getDefaultDisplay().getHeight() / 15));
                 bZ["setBackground"](exitbg);
                 bZ["getBackground"]()["setAlpha"](150);
                 bZ.setOnClickListener(new android.view.View.OnClickListener({
@@ -183,7 +215,7 @@ bZ.setPadding(8, 8, 8, 8);
                       btton["setBackground"](exitbg);                btton["getBackground"]()["setAlpha"](150);
       btton.setOnClickListener(new android.view.View.OnClickListener({
       onClick: function(viewarg){
-      //Your Code Here...
+      
         try{
      
       dplayer.stop();
@@ -212,11 +244,10 @@ bZ.setPadding(8, 8, 8, 8);
            print("Repeat activated."); }
       catch(err){print("Operation denied.");}
       
-      //Your Code Here...
+      
       }else{
       cc8 = !1;
-      //Your Code Here...
-
+      
       
             try{
       dplayer.setLooping(false);
@@ -251,7 +282,7 @@ function simulateKey(a) {
                 let inst = new Instrumentation;
                 inst.sendKeyDownUpSync(a)
             } catch (e) {
-                clientMessage(e)
+                O(e)
             }
         }
     }));
@@ -294,7 +325,7 @@ function getLoad(a, b) {
             if (f.split(":")[0] == b) c = f.split(":")[1]
         }
     } catch (e) {
-        clientMessage(e + " #" + e.lineNumber)
+        O(e + " #" + e.lineNumber)
     }
     return c
 }
@@ -351,7 +382,7 @@ function createBind(n, o, p) {
                                 break
                             }
                         } catch (e) {
-                            clientMessage("Error:" + e)
+                            O("Error:" + e)
                         }
                         return !0
                     }
@@ -374,8 +405,8 @@ function createBind(n, o, p) {
                 m.setOnTouchListener(k);
                 m.setOnLongClickListener(l);
                 m.setTypeface(font);
-                m["setBackground"](exitbg);
-                m["getBackground"]()["setAlpha"](150);
+                m["setBackground"](bgB);
+                
                 m.setPadding(8, 8, 8, 8);
                 m.setLayoutParams(new android.widget.LinearLayout.LayoutParams(dip(40), dip(40)));
                 m.setOnClickListener(new android.view.View.OnClickListener({
@@ -384,7 +415,7 @@ function createBind(n, o, p) {
                             if (p == "hitbox") {
                                 if (!hitbox[0]) {
                                     hitbox[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     hitbox[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -393,7 +424,7 @@ function createBind(n, o, p) {
                             if (p == "car") {
                                 if (!cda[0]) {
                                     cda[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     cda[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -402,7 +433,7 @@ function createBind(n, o, p) {
                             if (p == "ai") {
                                 if (!aimbot[0]) {
                                     aimbot[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     aimbot[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -411,7 +442,7 @@ function createBind(n, o, p) {
                             if (p == "net") {
                                 if (!behind[0]) {
                                     behind[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     behind[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -420,7 +451,7 @@ function createBind(n, o, p) {
                             if (p == "over") {
                                 if (!hover[0]) {
                                     hover[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     hover[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -429,7 +460,7 @@ function createBind(n, o, p) {
                             if (p == "hitboost") {
                                 if (!hitboost[0]) {
                                     hitboost[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     hitboost[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -438,7 +469,7 @@ function createBind(n, o, p) {
                             if (p == "tspin") {
                                 if (!tspin[0]) {
                                     tspin[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     tspin[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -447,7 +478,7 @@ function createBind(n, o, p) {
                             if (p == "hitaim") {
                                 if (!hitaim[0]) {
                                     hitaim[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     hitaim[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -456,7 +487,7 @@ function createBind(n, o, p) {
                             if (p == "tpauraed") {
                                 if (!tpauraed[0]) {
                                     tpauraed[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     tpauraed[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -465,7 +496,7 @@ function createBind(n, o, p) {
                             if (p == "killauraed") {
                                 if (!killauraed[0]) {
                                     killauraed[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     killauraed[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -474,7 +505,7 @@ function createBind(n, o, p) {
                             if (p == "back") {
                                 if (!back[0]) {
                                     back[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     back[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -483,7 +514,7 @@ function createBind(n, o, p) {
                             if (p == "rndaura") {
                                 if (!rndaura[0]) {
                                     rndaura[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     rndaura[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -492,7 +523,7 @@ function createBind(n, o, p) {
                             if (p == "ziga") {
                                 if (!ziga) {
                                     ziga = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     ziga = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -501,7 +532,7 @@ function createBind(n, o, p) {
                             if (p == "bowaim") {
                                 if (!bowaim) {
                                     bowaim = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     bowaim = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -510,7 +541,7 @@ function createBind(n, o, p) {
                             if (p == "critical") {
                                 if (!critical) {
                                     critical = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     critical = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -519,7 +550,7 @@ function createBind(n, o, p) {
                             if (p == "crit") {
                                 if (!crit) {
                                     crit = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     crit = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -528,7 +559,7 @@ function createBind(n, o, p) {
                             if (p == "beh2") {
                                 if (!beh2) {
                                     beh2 = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     beh2 = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -537,7 +568,7 @@ function createBind(n, o, p) {
                             if (p == "triggerso") {
                                 if (!triggers) {
                                     triggers = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     triggers = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -546,7 +577,7 @@ function createBind(n, o, p) {
                             if (p == "aimot") {
                                 if (!aimot) {
                                     aimot = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     aimot = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -555,7 +586,7 @@ function createBind(n, o, p) {
                             if (p == "trace") {
                                 if (!trace) {
                                     trace = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     trace = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -564,7 +595,7 @@ function createBind(n, o, p) {
                             if (p == "Flight") {
                                 if (!Flight) {
                                     Flight = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     Flight = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -573,7 +604,7 @@ function createBind(n, o, p) {
                             if (p == "sped") {
                                 if (!sped) {
                                     sped = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     sped = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -582,7 +613,7 @@ function createBind(n, o, p) {
                             if (p == "fly") {
                                 if (!fly) {
                                     fly = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     fly = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -591,7 +622,7 @@ function createBind(n, o, p) {
                             if (p == "wall") {
                                 if (!wall) {
                                     wall = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     wall = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -600,7 +631,7 @@ function createBind(n, o, p) {
                             if (p == "scall") {
                                 if (!scall) {
                                     scall = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     scall = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -609,7 +640,7 @@ function createBind(n, o, p) {
                             if (p == "jets") {
                                 if (!jets) {
                                     jets = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     jets = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -618,7 +649,7 @@ function createBind(n, o, p) {
                             if (p == "jetpack") {
                                 if (!jetpack) {
                                     jetpack = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     jetpack = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -627,7 +658,7 @@ function createBind(n, o, p) {
                             if (p == "aug") {
                                 if (!aug) {
                                     aug = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     aug = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -636,7 +667,7 @@ function createBind(n, o, p) {
 if (p == "tower") {
                                 if (!tower) {
                                     tower = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     tower = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -645,7 +676,7 @@ if (p == "tower") {
                             if (p == "nuker") {
                                 if (!nuker) {
                                     nuker = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     nuker = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -654,7 +685,7 @@ if (p == "tower") {
                             if (p == "bloy") {
                                 if (!bfly) {
                                     bfly = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     bfly = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
@@ -663,9 +694,28 @@ if (p == "tower") {
                             if (p == "spider") {
                                 if (!spider[0]) {
                                     spider[0] = !0;
-                                    m.setTextColor(android.graphics.Color.parseColor("#A800FF"))
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
                                 } else {
                                     spider[0] = !1;
+                                    m.setTextColor(android.graphics.Color.WHITE)
+                                }
+                            }
+                            if (p == "tnuker") {
+                                if (!tapnuker[0]) {
+                                    tapnuker[0] = !0;
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
+                                } else {
+                                    tapnuker[0] = !1;
+                                    m.setTextColor(android.graphics.Color.WHITE)
+                                }
+                            }
+                            if (p == "fov") {
+                                if (!fover[0]) {
+                                    fover[0] = !0;
+                                    m.setTextColor(android.graphics.Color.parseColor("#FFFF437A"))
+                                } else {
+                                ModPE.resetFov();
+                                    fover[0] = !1;
                                     m.setTextColor(android.graphics.Color.WHITE)
                                 }
                             }
@@ -673,18 +723,20 @@ if (p == "tower") {
                             jumper();
                             }
                         } catch (e) {
-                            clientMessage(e + ".#" + e.lineNumber)
+                            O(e + ".#" + e.lineNumber)
                         }
                     }
                 }));
                 d.addView(m);
-                eval(o + "=new android.widget.PopupWindow(d,RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);");
-                eval(o + ".setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));");
-                eval(o + ".setBackgroundDrawable(bge);");
+
+  
+                eval(o + "=new android.widget.PopupWindow(d,dip(40),dip(40));");
+              //  eval(o + ".setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));");
+           //     eval(o + ".setBackgroundDrawable(bge);");
                 eval(o + ".setAnimationStyle(android.R.style.Animation_Translucent);");
                 eval(o + ".showAtLocation(ctx.getWindow().getDecorView(),Gravity.LEFT|Gravity.TOP,0,0);")
             } catch (err) {
-                clientMessage("An error occured:" + err + err.lineNumber)
+                O("An error occured:" + err + err.lineNumber)
             }
         }
     }))
@@ -721,11 +773,11 @@ function genset() {
                     var c = new java.io.FileOutputStream(a, !1);
                     c.write(b.getBytes());
                     c.close();
-                    clientMessage("Settings replaced.Restarting your MCPE");
+                    O("Settings replaced.Restarting your MCPE");
                     net.zhuoweizhang.mcpelauncher.ui.NerdyStuffActivity.forceRestart(ctx)
                 }
             } catch (e) {
-                clientMessage(e)
+                O(e)
             }
         }
     }).start()
@@ -761,20 +813,20 @@ function inito() {
                                 }
                                 new android.os.Handler().postDelayed(this, 1000 / CPS)
                             } catch (e) {
-                                clientMessage(e + ' at #' + e.lineNumber);
+                                O(e + ' at #' + e.lineNumber);
                                 inito()
                             }
                         }
                     }), 1000 / CPS);
                     android.os.Looper.loop()
                 } catch (e) {
-                    clientMessage(e)
+                    O(e)
                 }
             }
         }));
         b.start()
     } catch (e) {
-        clientMessage(e)
+        O(e)
     }
 }
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
@@ -841,7 +893,7 @@ function showCoordinateGUI() {
                 coords_txt_view.setTypeface(font);
                 coords_txt_view.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
-                        coords_txt_view.setBackground(bgss)
+                        coords_txt_view.setBackground(bgB)
                     }
                 }));
                 coords_txt_view.setOnTouchListener(new android['view']['View'].OnTouchListener({
@@ -867,7 +919,7 @@ function showCoordinateGUI() {
                                 break
                             }
                         } catch (e) {
-                            clientMessage(e)
+                            O(e)
                         };
                         return !0
                     }
@@ -883,7 +935,7 @@ function showCoordinateGUI() {
                 coords_txt_menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(Color.TRANSPARENT));
                 coords_txt_menu.showAtLocation(ctx.getWindow().getDecorView(), Gravity.TOP | Gravity.LEFT, 0, 0)
             } catch (e) {
-                clientMessage(e + " #" + e.lineNumber)
+                O(e + " #" + e.lineNumber)
             }
         }
     }))
@@ -898,10 +950,10 @@ var bgss = new Gradient();
 bgss.setColor(Color.parseColor("#FF0000"));
 var othcfg = new Gradient();
 othcfg.setColor(Color.TRANSPARENT);
-othcfg.setStroke(5, Color.parseColor("#A800FF"));
+othcfg.setStroke(5, Color.parseColor("#FFFF437A"));
 othcfg.setCornerRadius(32);
 var othcfgs = new Gradient();
-othcfgs.setColor(Color.parseColor("#A800FF"));
+othcfgs.setColor(Color.parseColor("#FFFF437A"));
 
 
 
@@ -1088,7 +1140,7 @@ function findChests() {
                             if (getTile(x, y, z) == xrayt) g.push([x, y, z]);
                             f++
                         } catch (e) {
-                            clientMessage("Error:" + e + "#" + e.lineNumber)
+                            O("Error:" + e + "#" + e.lineNumber)
                         }
                     }
                 }
@@ -1108,7 +1160,7 @@ function findChests() {
                             if (getTile(x, y, z) == xrayt) g.push([x, y, z]);
                             f++
                         } catch (e) {
-                            clientMessage("Error:" + e + "#" + e.lineNumber)
+                            O("Error:" + e + "#" + e.lineNumber)
                         }
                     }
                 }
@@ -1128,7 +1180,7 @@ function findChests() {
                             if (getTile(x, y, z) == xrayt) g.push([x, y, z]);
                             f++
                         } catch (e) {
-                            clientMessage("Error:" + e + "#" + e.lineNumber)
+                            O("Error:" + e + "#" + e.lineNumber)
                         }
                     }
                 }
@@ -1148,7 +1200,7 @@ function findChests() {
                             if (getTile(x, y, z) == xrayt) g.push([x, y, z]);
                             f++
                         } catch (e) {
-                            clientMessage("Error:" + e + "#" + e.lineNumber)
+                            O("Error:" + e + "#" + e.lineNumber)
                         }
                     }
                 }
@@ -1284,20 +1336,20 @@ function kilka() {
                                 if (aug == !0) swing();
                                 new android.os.Handler().postDelayed(this, 1000 / KPS)
                             } catch (e) {
-                                clientMessage(e + ' at #' + e.lineNumber);
+                                O(e + ' at #' + e.lineNumber);
                                 kilka()
                             }
                         }
                     }), 1000 / KPS);
                     android.os.Looper.loop()
                 } catch (e) {
-                    clientMessage(e)
+                    O(e)
                 }
             }
         }));
         a.start()
     } catch (e) {
-        clientMessage(e)
+        O(e)
     }
 };
 
@@ -1324,9 +1376,9 @@ function ELEVATORKA() {
                 c.setText("UP");
                 c.setTextSize(15);
                 c.setTypeface(font);
-                c.setTextColor(android.graphics.Color.parseColor("#A800FF"));
+                c.setTextColor(android.graphics.Color.parseColor("#FFFF437A"));
                 c.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
-                c.setBackground(bge);
+                c.setBackground(bgB);
                 c.setPadding(20, 10, 20, 10);
                 c.setOnClickListener(new View.OnClickListener({
                     onClick: function (a) {
@@ -1345,9 +1397,9 @@ function ELEVATORKA() {
                 c.setText("DOWN");
                 c.setTextSize(15);
                 c.setTypeface(font);
-                c.setTextColor(android.graphics.Color.parseColor("#A800FF"));
+                c.setTextColor(android.graphics.Color.parseColor("#FFFF437A"));
                 c.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
-                c.setBackground(bge);
+                c.setBackground(bgB);
                 c.setPadding(20, 10, 20, 10);
                 c.setOnClickListener(new View.OnClickListener({
                     onClick: function (a) {
@@ -1361,7 +1413,7 @@ function ELEVATORKA() {
                 ELEVATORKA1.setAnimationStyle(R.style.Animation_Translucent);
                 ELEVATORKA1.showAtLocation(ctx.getWindow().getDecorView(), Gravity.RIGHT | Gravity.CENTER, 0, 0)
             } catch (err) {
-                clientMessage(err)
+                O(err)
             }
         }
     }))
@@ -1374,7 +1426,7 @@ function f4b() {
                 var c = new android.widget.RelativeLayout(ctx);
                 var d = android.widget.LinearLayout(ctx);
                 d.setGravity(Gravity.CENTER);
-                d.setBackground(bge);
+                d.setBackground(bgB);
                 c.addView(d);
                 d.setGravity(android.view.Gravity.CENTER);
                 var f = new Button(ctx);
@@ -1384,7 +1436,7 @@ function f4b() {
                 f.setPadding(8, 8, 8, 8);
                 f.setGravity(android.view.Gravity.CENTER);
                 f.setLayoutParams(new android.widget.LinearLayout.LayoutParams(dip(40), dip(40)));
-                f.setBackground(bge);
+                f.setBackground(bgB);
                 f.setTextColor(android.graphics.Color.WHITE);
                 f.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
@@ -1434,7 +1486,7 @@ function f4b() {
                 f4of.setAnimationStyle(android.R.style.Animation_Translucent);
                 f4of.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, postionhix, postionhiy)
             } catch (err) {
-                clientMessage("An error occured:" + err + "Line:(" + err.lineNumber + ")")
+                O("An error occured:" + err + "Line:(" + err.lineNumber + ")")
             }
         }
     }))
@@ -1459,6 +1511,11 @@ function rptask() {
             new android.os.Handler().postDelayed(new java.lang.Runnable({
                 run: function () {
                     try {
+                   if (fover[0] == !0) {
+                    
+                    ModPE.setFov(fover[2]);
+                    };
+
 
                         if (triggers == !0) {
                             if (togle == !1) {
@@ -1537,7 +1594,7 @@ function rptask() {
                             Render.glSurface.requestRender()
                         }
                     } catch (e) {
-                        clientMessage("Error:" + e + "#" + e.lineNumber)
+                        O("Error:" + e + "#" + e.lineNumber)
                     }
                     eval(rptask())
                 }
@@ -1554,7 +1611,7 @@ var black = "#000000";
 var red = "#FF0000";
 var green = "#51A100";
 var yellow = "#FFED24";
-var purple = "#A800FF";
+var purple = "#FFFF437A";
 var grey = "#212121";
 var amber = "#FFBF00";
 var orange = "#FFA500";
@@ -1695,6 +1752,9 @@ var bflybind = !1;
 var bunny = 10;
 var aback = [0,0];
 var spider = [!1,!1];
+var follow = [!1,!1];
+var tapnuker = [!1,!1,2,-1];
+var fover = [!1,!1,120];
 var screenChangeHook = (screen) => {
     sscreen = screen;
     if (screen.toString().indexOf("progress_screen") > -1) {
@@ -1894,10 +1954,10 @@ var Render = {
                                 })
                             }
                         } catch (e) {
-                            clientMessage("Error:" + e + "#" + e.lineNumber)
+                            O("Error:" + e + "#" + e.lineNumber)
                         }
                     } catch (e) {
-                        clientMessage("RenderProblem:" + e)
+                        O("RenderProblem:" + e)
                     }
                 }
             }
@@ -2070,7 +2130,7 @@ function scan() {
                                     if (i != Player.getEntity()) fakelist.push(i)
                                 }
                             } catch (e) {
-                                clientMessage(e+"@"+e.lineNumber);
+                                O(e+"@"+e.lineNumber);
                                 break
                             }
                         }
@@ -2093,7 +2153,7 @@ function scan() {
                     }
                     uniq_fast(fakelist);
                     list = fakelist;
-                    if (h) clientMessage("ID FOUND PLAYER:" + list);
+                    if (h) clientMessage("ID FOUND PLAYER:" +ChatColor.RED+ list);
                     started = !1;
                     sleep(2500);
                     if (elist) {
@@ -2103,7 +2163,7 @@ function scan() {
                 }
                 android.os.Looper.loop()
             } catch (e) {
-                clientMessage(e+"@"+e.lineNumber)
+                O(e+"@"+e.lineNumber)
             }
         }
     }));
@@ -2135,7 +2195,7 @@ function GU() {
                 d.setOrientation(1);
                 c.addView(d);
                 var f = new Text(ctx);
-                f.setText((android.text.Html.fromHtml('<b><font color="#A800FF">N</font></b><b><font color="white">iger</font></b><b><font color="#A800FF">H</font></b><b><font color="white">ack</font></b><b><font color="#A800FF">V</font></b><b><font color="white">1.0</font></b>')));
+                f.setText((android.text.Html.fromHtml('<b><font color="#FF9864FF">N</font></b><b><font color="red">iger</font></b><b><font color="#FF9864FF">H</font></b><b><font color="red">ack</font></b><b><font color="#FF9864FF">V</font></b><b><font color="white">2.3</font></b>')));
                 f.setTextColor(Color.WHITE);
                 f.setTextSize(15);
                 f.setTypeface(font);
@@ -2182,7 +2242,7 @@ function GU() {
                 menue = new android.widget.PopupWindow(c, 270, 110);
                 menue.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, 50, 50)
             } catch (e) {
-                clientMessage('Menu Error(' + e.lineNumber + '):' + e)
+                O('Menu Error(' + e.lineNumber + '):' + e)
             }
         }
     }))
@@ -2216,17 +2276,17 @@ function menus() {
                                 break
                             }
                         } catch (e) {
-                            clientMessage("Error:" + e)
+                            O("Error:" + e)
                         }
                         return !0
                     }
                 });
                 var d = new Linear(ctx);
-                d.setBackground(bge);
+                d.setBackground(bgB);
                 d.setOrientation(1);
                 var f = new Linear(ctx);
                 f.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
-                f.setBackground(bg);
+                f.setBackground(bgB);
                 f.setOrientation(1);
                 var g = new Scroll(ctx);
                 g.setLayoutParams(new LinearLayout.LayoutParams(ctx.getWindowManager().getDefaultDisplay().getWidth() / 3.5, ctx.getWindowManager().getDefaultDisplay().getHeight() / 1.830));
@@ -2244,7 +2304,7 @@ function menus() {
                 l.setPadding(8, 8, 8, 8);
                 var m = new Linear(ctx);
                 m.setPadding(8, 8, 8, 8);
-                m.setBackground(bg);
+                m.setBackground(bgB);
                 var n = new Linear(ctx);
                 d.addView(f);
                 d.addView(g);
@@ -2254,10 +2314,10 @@ function menus() {
                 h.addView(j);
                 h.addView(k);
                 h.addView(l);
-                var o = new Linear(ctx);
+              /*  var o = new Linear(ctx);
                 o.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, ctx.getWindowManager().getDefaultDisplay().getHeight() / 150));
-                o.setBackground(bgss);
-                f.addView(o);
+                o.setBackground(bgB);
+                f.addView(o);*/
                 j.setVisibility(View.VISIBLE);
                 k.setVisibility(View.GONE);
                 l.setVisibility(View.GONE);
@@ -2276,13 +2336,13 @@ function menus() {
                 q.setTextSize(14);
                 q.setTypeface(font);
                 if (hitbox[0] == !0) {
-                    q.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    q.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="red">ON</font></b>')))
                 }
                 q.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!hitbox[0]) {
                             hitbox[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HitBox:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             hitbox[0] = !1;
                             Entity.setCollisionSize(Player.getPointedEntity(), 1, 2);
@@ -2312,7 +2372,7 @@ function menus() {
                 r.setTextColor(android.graphics.Color.WHITE);
                 j.addView(r);
                 var s = new android.widget.SeekBar(ctx);
-                s.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                s.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 s.setMax(1500);
                 s.setPadding(25, 15, 25, 15);
                 s.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2320,7 +2380,7 @@ function menus() {
                 s.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         colisionx = s.getProgress() / 100;
-                        r.setText(android.text.Html.fromHtml("<font color='White'>X:</font><font color='#A800FF'>" + colisionx + "</font>"))
+                        r.setText(android.text.Html.fromHtml("<font color='White'>X:</font><font color='#FFFF0000'>" + colisionx + "</font>"))
                     }
                 });
                 j.addView(s);
@@ -2332,7 +2392,7 @@ function menus() {
                 u.setTextColor(android.graphics.Color.WHITE);
                 j.addView(u);
                 var w = new android.widget.SeekBar(ctx);
-                w.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                w.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 w.setMax(1500);
                 w.setPadding(25, 15, 25, 15);
                 w.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2340,7 +2400,7 @@ function menus() {
                 w.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         colisiony = w.getProgress() / 100;
-                        u.setText(android.text.Html.fromHtml("<font color='White'>Y:</font><font color='#A800FF'>" + colisiony + "</font>"))
+                        u.setText(android.text.Html.fromHtml("<font color='White'>Y:</font><font color='#FFFF0000'>" + colisiony + "</font>"))
                     }
                 });
                 j.addView(w);};
@@ -2350,13 +2410,13 @@ function menus() {
                 x.setTextSize(14);
                 x.setTypeface(font);
                 if (cda[0] == !0) {
-                    x.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    x.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="red">ON</font></b>')))
                 }
                 x.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!cda[0]) {
                             cda[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             cda[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">coord:</font></b><b><font color="white">OFF</font></b>')))
@@ -2382,13 +2442,13 @@ function menus() {
                 y.setTextSize(14);
                 y.setTypeface(font);
                 if (aimbot[0] == !0) {
-                    y.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    y.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="red">ON</font></b>')))
                 }
                 y.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!aimbot[0]) {
                             aimbot[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             aimbot[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">AimBot:</font></b><b><font color="white">OFF</font></b>')))
@@ -2417,7 +2477,7 @@ function menus() {
                 z.setTextColor(android.graphics.Color.WHITE);
                 j.addView(z);
                 var A = new android.widget.SeekBar(ctx);
-                A.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                A.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 A.setMax(1500);
                 A.setPadding(25, 15, 25, 15);
                 A.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2425,7 +2485,7 @@ function menus() {
                 A.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         intaim = A.getProgress() / 100;
-                        z.setText(android.text.Html.fromHtml("<font color='White'>AimRange:</font><font color='#A800FF'>" + intaim + "</font>"))
+                        z.setText(android.text.Html.fromHtml("<font color='White'>AimRange:</font><font color='#FFFF0000'>" + intaim + "</font>"))
                     }
                 });
                 j.addView(A);};
@@ -2435,13 +2495,13 @@ function menus() {
                 B.setTextSize(14);
                 B.setTypeface(font);
                 if (behind[0] == !0) {
-                    B.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    B.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="red">ON</font></b>')))
                 }
                 B.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!behind[0]) {
                             behind[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             behind[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND:</font></b><b><font color="white">OFF</font></b>')))
@@ -2467,13 +2527,13 @@ function menus() {
                 C.setTextSize(14);
                 C.setTypeface(font);
                 if (akb == !0) {
-                    C.setText((android.text.Html.fromHtml('<b><font color="white">AKB:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    C.setText((android.text.Html.fromHtml('<b><font color="white">AKB:</font></b><b><font color="red">ON</font></b>')))
                 }
                 C.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!akb) {
                             akb = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">AKB:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">AKB:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             akb = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">AKB:</font></b><b><font color="white">OFF</font></b>')))
@@ -2487,13 +2547,13 @@ function menus() {
                 D.setTextSize(14);
                 D.setTypeface(font);
                 if (hover[0] == !0) {
-                    D.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    D.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="red">ON</font></b>')))
                 }
                 D.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!hover[0]) {
                             hover[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             hover[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HOVERAURA:</font></b><b><font color="white">OFF</font></b>')))
@@ -2519,13 +2579,13 @@ function menus() {
                 E.setTextSize(14);
                 E.setTypeface(font);
                 if (hitboost[0] == !0) {
-                    E.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    E.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="red">ON</font></b>')))
                 }
                 E.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!hitboost[0]) {
                             hitboost[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             hitboost[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITBOOST:</font></b><b><font color="white">OFF</font></b>')))
@@ -2555,7 +2615,7 @@ function menus() {
                 j.addView(F);
                
                 var G = new android.widget.SeekBar(ctx);
-                G.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                G.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 G.setMax(1500);
                 G.setPadding(25, 15, 25, 15);
                 G.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2563,7 +2623,7 @@ function menus() {
                 G.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         seo = G.getProgress() / 100;
-                        F.setText(android.text.Html.fromHtml("<font color='White'>BOOST:</font><font color='#A800FF'>" + seo + "</font>"))
+                        F.setText(android.text.Html.fromHtml("<font color='White'>BOOST:</font><font color='#FFFF0000'>" + seo + "</font>"))
                     }
                 });
                 j.addView(G);};
@@ -2573,13 +2633,13 @@ function menus() {
                 H.setTextSize(14);
                 H.setTypeface(font);
                 if (tspin[0] == !0) {
-                    H.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    H.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="red">ON</font></b>')))
                 }
                 H.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!tspin[0]) {
                             tspin[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             tspin[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TSpin:</font></b><b><font color="white">OFF</font></b>')))
@@ -2608,7 +2668,7 @@ function menus() {
                 I.setTextColor(android.graphics.Color.WHITE);
                 j.addView(I);
                 var J = new android.widget.SeekBar(ctx);
-                J.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                J.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 J.setMax(1500);
                 J.setPadding(25, 15, 25, 15);
                 J.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2616,7 +2676,7 @@ function menus() {
                 J.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         range = J.getProgress() / 100;
-                        I.setText(android.text.Html.fromHtml("<font color='White'>Range:</font><font color='#A800FF'>" + range + "</font>"))
+                        I.setText(android.text.Html.fromHtml("<font color='White'>Range:</font><font color='#FFFF0000'>" + range + "</font>"))
                     }
                 });
                 j.addView(J);
@@ -2628,7 +2688,7 @@ function menus() {
                 K.setTextColor(android.graphics.Color.WHITE);
                 j.addView(K);
                 var L = new android.widget.SeekBar(ctx);
-                L.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                L.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 L.setMax(1500);
                 L.setPadding(25, 15, 25, 15);
                 L.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2636,7 +2696,7 @@ function menus() {
                 L.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         spins = L.getProgress() / 100;
-                        K.setText(android.text.Html.fromHtml("<font color='White'>SPEED:</font><font color='#A800FF'>" + spins + "</font>"))
+                        K.setText(android.text.Html.fromHtml("<font color='White'>SPEED:</font><font color='#FFFF0000'>" + spins + "</font>"))
                     }
                 });
                 j.addView(L);};
@@ -2646,13 +2706,13 @@ function menus() {
                 M.setTextSize(14);
                 M.setTypeface(font);
                 if (hitaim[0] == !0) {
-                    M.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    M.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="red">ON</font></b>')))
                 }
                 M.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!hitaim[0]) {
                             hitaim[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             hitaim[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITAIM:</font></b><b><font color="white">OFF</font></b>')))
@@ -2678,13 +2738,13 @@ function menus() {
                 N.setTextSize(14);
                 N.setTypeface(font);
                 if (tpauraed[0] == !0) {
-                    N.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    N.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="red">ON</font></b>')))
                 }
                 N.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!tpauraed[0]) {
                             tpauraed[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             tpauraed[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TPAURA:</font></b><b><font color="white">OFF</font></b>')))
@@ -2713,7 +2773,7 @@ function menus() {
                 O.setTextColor(android.graphics.Color.WHITE);
                 j.addView(O);
                 var P = new android.widget.SeekBar(ctx);
-                P.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                P.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 P.setMax(1500);
                 P.setPadding(25, 15, 25, 15);
                 P.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2721,7 +2781,7 @@ function menus() {
                 P.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         ses = P.getProgress() / 100;
-                        O.setText(android.text.Html.fromHtml("<font color='White'>UPS:</font><font color='#A800FF'>" + ses + "</font>"))
+                        O.setText(android.text.Html.fromHtml("<font color='White'>UPS:</font><font color='#FFFF0000'>" + ses + "</font>"))
                     }
                 });
                 j.addView(P);};
@@ -2731,13 +2791,13 @@ function menus() {
                 Q.setTextSize(14);
                 Q.setTypeface(font);
                 if (killauraed[0] == !0) {
-                    Q.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    Q.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="red">ON</font></b>')))
                 }
                 Q.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!killauraed[0]) {
                             killauraed[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             killauraed[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TPHIT:</font></b><b><font color="white">OFF</font></b>')))
@@ -2763,13 +2823,13 @@ function menus() {
                 R.setTextSize(14);
                 R.setTypeface(font);
                 if (back[0] == !0) {
-                    R.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    R.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="red">ON</font></b>')))
                 }
                 R.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!back[0]) {
                             back[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             back[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BACKAURA:</font></b><b><font color="white">OFF</font></b>')))
@@ -2798,7 +2858,7 @@ function menus() {
                 S.setTextColor(android.graphics.Color.WHITE);
                 j.addView(S);
                 var T = new android.widget.SeekBar(ctx);
-                T.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                T.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 T.setMax(1500);
                 T.setPadding(25, 15, 25, 15);
                 T.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -2806,7 +2866,7 @@ function menus() {
                 T.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         seob = T.getProgress() / 100;
-                        S.setText(android.text.Html.fromHtml("<font color='White'>BBOOST:</font><font color='#A800FF'>" + seob + "</font>"))
+                        S.setText(android.text.Html.fromHtml("<font color='White'>BBOOST:</font><font color='#FFFF0000'>" + seob + "</font>"))
                     }
                 });
                 j.addView(T);};
@@ -2816,13 +2876,13 @@ function menus() {
                 U.setTextSize(14);
                 U.setTypeface(font);
                 if (rndaura[0] == !0) {
-                    U.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    U.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="red">ON</font></b>')))
                 }
                 U.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!rndaura[0]) {
                             rndaura[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             rndaura[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">RNDAURA:</font></b><b><font color="white">OFF</font></b>')))
@@ -2848,13 +2908,13 @@ function menus() {
                 V.setTextSize(14);
                 V.setTypeface(font);
                 if (ziga == !0) {
-                    V.setText((android.text.Html.fromHtml('<b><font color="white">ZIGZAG:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    V.setText((android.text.Html.fromHtml('<b><font color="white">ZIGZAG:</font></b><b><font color="red">ON</font></b>')))
                 }
                 V.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!ziga) {
                             ziga = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">ZIGZAG:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">ZIGZAG:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             ziga = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">ZIGZAG:</font></b><b><font color="white">OFF</font></b>')))
@@ -2880,14 +2940,14 @@ function menus() {
                 W.setTextSize(14);
                 W.setTypeface(font);
                 if (bowaim == !0) {
-                    W.setText((android.text.Html.fromHtml('<b><font color="white">HITAU2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    W.setText((android.text.Html.fromHtml('<b><font color="white">HITAU2:</font></b><b><font color="red">ON</font></b>')))
                 }
                 W.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!bowaim) {
                             bowaim = !0;
-                            clientMessage("Thank to @ModerCoder");
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITAU2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            O("Thank to @ModerCoder");
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITAU2:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             bowaim = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">HITAU2:</font></b><b><font color="white">OFF</font></b>')))
@@ -2913,13 +2973,13 @@ function menus() {
                 X.setTextSize(14);
                 X.setTypeface(font);
                 if (critical == !0) {
-                    X.setText((android.text.Html.fromHtml('<b><font color="white">CRITICAL:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    X.setText((android.text.Html.fromHtml('<b><font color="white">CRITICAL:</font></b><b><font color="red">ON</font></b>')))
                 }
                 X.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!critical) {
                             critical = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">CRITICAL:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">CRITICAL:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             critical = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">CRITICAL:</font></b><b><font color="white">OFF</font></b>')))
@@ -2945,13 +3005,13 @@ function menus() {
                 Y.setTextSize(14);
                 Y.setTypeface(font);
                 if (crit == !0) {
-                    Y.setText((android.text.Html.fromHtml('<b><font color="white">CRITICALv2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    Y.setText((android.text.Html.fromHtml('<b><font color="white">CRITICALv2:</font></b><b><font color="red">ON</font></b>')))
                 }
                 Y.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!crit) {
                             crit = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">CRITICALv2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">CRITICALv2:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             crit = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">CRITICALv2:</font></b><b><font color="white">OFF</font></b>')))
@@ -2977,13 +3037,13 @@ function menus() {
                 Z.setTextSize(14);
                 Z.setTypeface(font);
                 if (beh2 == !0) {
-                    Z.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    Z.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND2:</font></b><b><font color="red">ON</font></b>')))
                 }
                 Z.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!beh2) {
                             beh2 = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND2:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             beh2 = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BEHIND2:</font></b><b><font color="white">OFF</font></b>')))
@@ -3012,7 +3072,7 @@ function menus() {
                 bH.setTextColor(android.graphics.Color.WHITE);
                 j.addView(bH);
                 var bI = new android.widget.SeekBar(ctx);
-                bI.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                bI.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 bI.setMax(1500);
                 bI.setPadding(25, 15, 25, 15);
                 bI.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -3020,7 +3080,7 @@ function menus() {
                 bI.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         gaps = bI.getProgress() / 100;
-                        bH.setText(android.text.Html.fromHtml("<font color='White'>GAPv2:</font><font color='#A800FF'>" + gaps + "</font>"))
+                        bH.setText(android.text.Html.fromHtml("<font color='White'>GAPv2:</font><font color='#FFFF0000'>" + gaps + "</font>"))
                     }
                 });
                 j.addView(bI);};
@@ -3049,7 +3109,7 @@ function menus() {
                 bK.setTextSize(14);
                 bK.setTypeface(font);
                 if (elist == !0) {
-                    bK.setText((android.text.Html.fromHtml('<b><font color="white">PLSCAN:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bK.setText((android.text.Html.fromHtml('<b><font color="white">PLSCAN:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bK.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
@@ -3061,7 +3121,7 @@ function menus() {
                         }
                         if (!elist) {
                             elist = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">PLSCAN:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">PLSCAN:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             elist = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">PLSCAN:</font></b><b><font color="white">OFF</font></b>')))
@@ -3092,7 +3152,7 @@ function menus() {
                 bL.setTextColor(android.graphics.Color.WHITE);
                 j.addView(bL);
                 var bM = new android.widget.SeekBar(ctx);
-                bM.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                bM.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 bM.setMax(1500);
                 bM.setPadding(25, 15, 25, 15);
                 bM.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -3100,7 +3160,7 @@ function menus() {
                 bM.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         max = bM.getProgress() * 1000;
-                        bL.setText(android.text.Html.fromHtml("<font color='White'>ScanR:</font><font color='#A800FF'>" + max + "</font>"))
+                        bL.setText(android.text.Html.fromHtml("<font color='White'>ScanR:</font><font color='#FFFF0000'>" + max + "</font>"))
                     }
                 });
                 j.addView(bM);};
@@ -3110,13 +3170,13 @@ function menus() {
                 bN.setTextSize(14);
                 bN.setTypeface(font);
                 if (triggers == !0) {
-                    bN.setText((android.text.Html.fromHtml('<b><font color="white">TRIGGERBOT:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bN.setText((android.text.Html.fromHtml('<b><font color="white">TRIGGERBOT:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bN.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!triggers) {
                             triggers = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">TRIGGERBOT:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TRIGGERBOT:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             triggers = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TRIGGERBOT:</font></b><b><font color="white">OFF</font></b>')))
@@ -3145,7 +3205,7 @@ function menus() {
                 bO.setTextColor(android.graphics.Color.WHITE);
                 j.addView(bO);
                 var bP = new android.widget.SeekBar(ctx);
-                bP.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                bP.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 bP.setMax(1500);
                 bP.setPadding(25, 15, 25, 15);
                 bP.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -3153,7 +3213,7 @@ function menus() {
                 bP.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         CPS = bP.getProgress() / 1;
-                        bO.setText(android.text.Html.fromHtml("<font color='White'>CPS:</font><font color='#A800FF'>" + CPS + "</font>"))
+                        bO.setText(android.text.Html.fromHtml("<font color='White'>CPS:</font><font color='#FFFF0000'>" + CPS + "</font>"))
                     }
                 });
                 j.addView(bP);};
@@ -3163,13 +3223,13 @@ function menus() {
                 bQ.setTextSize(14);
                 bQ.setTypeface(font);
                 if (aimot == !0) {
-                    bQ.setText((android.text.Html.fromHtml('<b><font color="white">ESP:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bQ.setText((android.text.Html.fromHtml('<b><font color="white">ESP:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bQ.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!aimot) {
                             aimot = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">ESP:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">ESP:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             aimot = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">ESP:</font></b><b><font color="white">OFF</font></b>')))
@@ -3195,13 +3255,13 @@ function menus() {
                 bR.setTextSize(14);
                 bR.setTypeface(font);
                 if (aug == !0) {
-                    bR.setText((android.text.Html.fromHtml('<b><font color="white">KILLAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bR.setText((android.text.Html.fromHtml('<b><font color="white">KILLAURA:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bR.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!aug) {
                             aug = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">KILLAURA:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">KILLAURA:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             aug = !1;
                             Entity.setCollisionSize(Player.getPointedEntity(), 1, 2);
@@ -3228,13 +3288,13 @@ function menus() {
                 bS.setTextSize(14);
                 bS.setTypeface(font);
                 if (trace == !0) {
-                    bS.setText((android.text.Html.fromHtml('<b><font color="white">TRACER:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bS.setText((android.text.Html.fromHtml('<b><font color="white">TRACER:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bS.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!trace) {
                             trace = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">TRACER:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TRACER:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             trace = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TRACER:</font></b><b><font color="white">OFF</font></b>')))
@@ -3260,13 +3320,13 @@ function menus() {
                 bT.setTextSize(14);
                 bT.setTypeface(font);
                 if (Flight == !0) {
-                    bT.setText((android.text.Html.fromHtml('<b><font color="white">Flight:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bT.setText((android.text.Html.fromHtml('<b><font color="white">Flight:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bT.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!Flight) {
                             Flight = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">Flight:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">Flight:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             Flight = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">Flight:</font></b><b><font color="white">OFF</font></b>')))
@@ -3292,13 +3352,13 @@ function menus() {
                 bU.setTextSize(14);
                 bU.setTypeface(font);
                 if (sped == !0) {
-                    bU.setText((android.text.Html.fromHtml('<b><font color="white">SPEED:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bU.setText((android.text.Html.fromHtml('<b><font color="white">SPEED:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bU.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!sped) {
                             sped = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">SPEED:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">SPEED:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             sped = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">SPEED:</font></b><b><font color="white">OFF</font></b>')))
@@ -3324,13 +3384,13 @@ function menus() {
                 bV.setTextSize(14);
                 bV.setTypeface(font);
                 if (fly == !0) {
-                    bV.setText((android.text.Html.fromHtml('<b><font color="white">TapTp:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bV.setText((android.text.Html.fromHtml('<b><font color="white">TapTp:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bV.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!fly) {
                             fly = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">TapTp:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TapTp:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             fly = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">TapTp:</font></b><b><font color="white">OFF</font></b>')))
@@ -3356,13 +3416,13 @@ function menus() {
                 tw.setTextSize(14);
                 tw.setTypeface(font);
                 if (tower == !0) {
-                    tw.setText((android.text.Html.fromHtml('<b><font color="white">Tower:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    tw.setText((android.text.Html.fromHtml('<b><font color="white">Tower:</font></b><b><font color="red">ON</font></b>')))
                 }
                 tw.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!tower) {
                             tower = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">Tower:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">Tower:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             tower = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">Tower:</font></b><b><font color="white">OFF</font></b>')))
@@ -3388,13 +3448,13 @@ function menus() {
                 bW.setTextSize(14);
                 bW.setTypeface(font);
                 if (wall == !0) {
-                    bW.setText((android.text.Html.fromHtml('<b><font color="white">WALL:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bW.setText((android.text.Html.fromHtml('<b><font color="white">WALL:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bW.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!wall) {
                             wall = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">WALL:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">WALL:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             wall = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">WALL:</font></b><b><font color="white">OFF</font></b>')))
@@ -3420,13 +3480,13 @@ function menus() {
                 bX.setTextSize(14);
                 bX.setTypeface(font);
                 if (scall == !0) {
-                    bX.setText((android.text.Html.fromHtml('<b><font color="white">scafold:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bX.setText((android.text.Html.fromHtml('<b><font color="white">scafold:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bX.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!scall) {
                             scall = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">scafold:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">scafold:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             scall = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">scafold:</font></b><b><font color="white">OFF</font></b>')))
@@ -3452,13 +3512,13 @@ function menus() {
                 sp.setTextSize(14);
                 sp.setTypeface(font);
                 if (spider[0] == !0) {
-                    sp.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    sp.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="red">ON</font></b>')))
                 }
                 sp.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!spider[0]) {
                             spider[0] = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             spider[0] = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">SPIDER:</font></b><b><font color="white">OFF</font></b>')))
@@ -3484,13 +3544,13 @@ function menus() {
                 bY.setTextSize(14);
                 bY.setTypeface(font);
                 if (jets == !0) {
-                    bY.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bY.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK2:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bY.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!jets) {
                             jets = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK2:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK2:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             jets = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK2:</font></b><b><font color="white">OFF</font></b>')))
@@ -3517,13 +3577,13 @@ function menus() {
                 bf.setTextSize(14);
                 bf.setTypeface(font);
                 if (bfly == !0) {
-                    bf.setText((android.text.Html.fromHtml('<b><font color="white">BUNNYFLY:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bf.setText((android.text.Html.fromHtml('<b><font color="white">BUNNYFLY:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bf.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!bfly) {
                             bfly = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">BUNNYFLY:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">BUNNYFLY:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             bfly = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">BUNNYFLY:</font></b><b><font color="white">OFF</font></b>')))
@@ -3549,7 +3609,7 @@ function menus() {
                 mv.setTextSize(14);
                 mv.setTypeface(font);
                 if (move[0] == !0) {
-                    mv.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    mv.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="red">ON</font></b>')))
                 }
                 mv.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
@@ -3557,7 +3617,7 @@ function menus() {
                         if (!move[0]) {
                             move[0] = !0;
                             createBind("MOVE","mov","move");
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">MOVE:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             move[0] = !1;
                             eval("mov.dismiss()");
@@ -3572,13 +3632,13 @@ function menus() {
                 bZ.setTextSize(14);
                 bZ.setTypeface(font);
                 if (jetpack == !0) {
-                    bZ.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    bZ.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK:</font></b><b><font color="red">ON</font></b>')))
                 }
                 bZ.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!jetpack) {
                             jetpack = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             jetpack = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">JETPACK:</font></b><b><font color="white">OFF</font></b>')))
@@ -3609,7 +3669,7 @@ function menus() {
                 ca.setTextColor(android.graphics.Color.WHITE);
                 k.addView(ca);
                 var t = new android.widget.SeekBar(ctx);
-                t.getThumb().setColorFilter(Color.parseColor("#A800FF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                t.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 t.setMax(1500);
                 t.setPadding(25, 15, 25, 15);
                 t.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -3617,7 +3677,7 @@ function menus() {
                 t.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         FOV = t.getProgress() / 100;
-                        ca.setText(android.text.Html.fromHtml("<font color='White'>JetSpeed:</font><font color='#A800FF'>" + FOV + "</font>"))
+                        ca.setText(android.text.Html.fromHtml("<font color='White'>JetSpeed:</font><font color='#FFFF0000'>" + FOV + "</font>"))
                     }
                 });
                 k.addView(t);};
@@ -3627,14 +3687,14 @@ function menus() {
                 cb.setTextSize(14);
                 cb.setTypeface(font);
                 if (elev == !0) {
-                    cb.setText((android.text.Html.fromHtml('<b><font color="white">ELEVATOR:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    cb.setText((android.text.Html.fromHtml('<b><font color="white">ELEVATOR:</font></b><b><font color="red">ON</font></b>')))
                 }
                 cb.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!elev) {
                             elev = !0;
                             ELEVATORKA();
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">ELEVATOR:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">ELEVATOR:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             elev = !1;
                             ELEVATORKA1.dismiss();
@@ -3649,13 +3709,13 @@ function menus() {
                 cc.setTextSize(14);
                 cc.setTypeface(font);
                 if (full == !0) {
-                    cc.setText((android.text.Html.fromHtml('<b><font color="white">FULLBRIGHT:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    cc.setText((android.text.Html.fromHtml('<b><font color="white">FULLBRIGHT:</font></b><b><font color="red">ON</font></b>')))
                 }
                 cc.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!full) {
                             full = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">FULLBRIGHT:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">FULLBRIGHT:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             full = !1;
                             Entity.removeEffect(Player.getEntity(), 16);
@@ -3670,13 +3730,13 @@ function menus() {
                 cj.setTextSize(14);
                 cj.setTypeface(font);
                 if (haste == !0) {
-                    cj.setText((android.text.Html.fromHtml('<b><font color="white">HASTE:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    cj.setText((android.text.Html.fromHtml('<b><font color="white">HASTE:</font></b><b><font color="red">ON</font></b>')))
                 }
                 cj.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!haste) {
                             haste = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HASTE:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HASTE:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             haste = !1;
                             Entity.removeEffect(Player.getEntity(), 3);
@@ -3691,14 +3751,14 @@ function menus() {
                 jetsssui99.setTextSize(14);
                 jetsssui99.setTypeface(font);
                 if (coordsGUI == !0) {
-                    jetsssui99.setText((android.text.Html.fromHtml('<b><font color="white">HITINFO:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    jetsssui99.setText((android.text.Html.fromHtml('<b><font color="white">HITINFO:</font></b><b><font color="red">ON</font></b>')))
                 }
                 jetsssui99.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!coordsGUI) {
                             coordsGUI = !0;
                             showCoordinateGUI();
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITINFO:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">HITINFO:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             coordsGUI = !1;
                             coords_txt_menu.dismiss();
@@ -3715,13 +3775,13 @@ function menus() {
                 cg.setTextSize(14);
                 cg.setTypeface(font);
                 if (cheted == !0) {
-                    cg.setText((android.text.Html.fromHtml('<b><font color="white">XRAY:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    cg.setText((android.text.Html.fromHtml('<b><font color="white">XRAY:</font></b><b><font color="red">ON</font></b>')))
                 }
                 cg.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!cheted) {
                             cheted = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">XRAY:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">XRAY:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             cheted = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">XRAY:</font></b><b><font color="white">OFF</font></b>')))
@@ -3731,14 +3791,14 @@ function menus() {
                 l.addView(cg);
 
                 var cd = new android.widget.TextView(ctx);
-                cd.setText(android.text.Html.fromHtml("<font color='White'>Radius:</font><font color='#f000f1'>" + radius + "</font>"));
+                cd.setText(android.text.Html.fromHtml("<font color='White'>Radius:</font><font color='#FFFF0000'>" + radius + "</font>"));
                 cd.setPadding(10, 5, 10, 0);
                 cd.setTextSize(15);
                 cd.setTypeface(font);
                 cd.setTextColor(android.graphics.Color.WHITE);
                 l.addView(cd);
                 var ce = new android.widget.SeekBar(ctx);
-                ce.getThumb().setColorFilter(Color.parseColor("#f000f1"), android.graphics.PorterDuff.Mode.SRC_IN);
+                ce.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
                 ce.setMax(1000);
                 ce.setPadding(25, 15, 25, 15);
                 ce.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
@@ -3746,7 +3806,7 @@ function menus() {
                 ce.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
                     onProgressChanged: function (a) {
                         radius = ce.getProgress() / 10;
-                        cd.setText(android.text.Html.fromHtml("<font color='White'>RADIUS:</font><font color='#f000f1'>" + radius + "</font>"))
+                        cd.setText(android.text.Html.fromHtml("<font color='White'>RADIUS:</font><font color='#FFFF0000'>" + radius + "</font>"))
                     }
                 });
                 l.addView(ce);
@@ -3840,13 +3900,13 @@ function menus() {
                 ch.setTextSize(14);
                 ch.setTypeface(font);
                 if (command == !0) {
-                    ch.setText((android.text.Html.fromHtml('<b><font color="white">on low hp:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    ch.setText((android.text.Html.fromHtml('<b><font color="white">on low hp:</font></b><b><font color="red">ON</font></b>')))
                 }
                 ch.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!command) {
                             command = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">on low hp:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">on low hp:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             command = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">on low hp:</font></b><b><font color="white">OFF</font></b>')))
@@ -3873,7 +3933,7 @@ function menus() {
                 cj.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         genset();
-                        clientMessage("GENERATE NORMAL PVP SETTING FOR CHEAT")
+                        O("GENERATE NORMAL PVP SETTING FOR CHEAT")
                     }
                 }));
                 l.addView(cj);
@@ -3884,13 +3944,13 @@ function menus() {
                 nk.setTextSize(14);
                 nk.setTypeface(font);
                 if (nuker == !0) {
-                    nk.setText((android.text.Html.fromHtml('<b><font color="white">Nuker:</font></b><b><font color="#A800FF">ON</font></b>')))
+                    nk.setText((android.text.Html.fromHtml('<b><font color="white">Nuker:</font></b><b><font color="red">ON</font></b>')))
                 }
                 nk.setOnClickListener(new android.view.View.OnClickListener({
                     onClick: function (a) {
                         if (!nuker) {
                             nuker = !0;
-                            a.setText((android.text.Html.fromHtml('<b><font color="white">Nuker:</font></b><b><font color="#A800FF">ON</font></b>')))
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">Nuker:</font></b><b><font color="red">ON</font></b>')))
                         } else {
                             nuker = !1;
                             a.setText((android.text.Html.fromHtml('<b><font color="white">Nuker:</font></b><b><font color="white">OFF</font></b>')))
@@ -3912,6 +3972,97 @@ function menus() {
                     }
                 }));
                 l.addView(nk);};
+                                                var tn = new TextView(ctx);
+                tn.setText((android.text.Html.fromHtml('<b><font color="white">TapNuker:</font></b><b><font color="white">OFF</font></b>')));
+                tn.setTextColor(Color.WHITE);
+                tn.setTextSize(14);
+                tn.setTypeface(font);
+                if (tapnuker[0] == !0) {
+                    tn.setText((android.text.Html.fromHtml('<b><font color="white">TapNuker:</font></b><b><font color="red">ON</font></b>')))
+                }
+                tn.setOnClickListener(new android.view.View.OnClickListener({
+                    onClick: function (a) {
+                        if (!tapnuker[0]) {
+                            tapnuker[0] = !0;
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TapNuker:</font></b><b><font color="red">ON</font></b>')))
+                        } else {
+                            tapnuker[0] = !1;
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">TapNuker:</font></b><b><font color="white">OFF</font></b>')))
+                        }
+                    }
+                }));
+                tn.setOnLongClickListener(new android.view.View.OnLongClickListener({
+                    onLongClick: function (v, t) {
+                        if (!tapnuker[1]) {
+                            tapnuker[1] = !0;
+                            
+                            createBind("tapnuk", "tnuks", "tnuker")
+                        } else {
+                            tapnuker[1] = !1;
+                            eval("tnuks.dismiss()")
+                            
+                        }
+                        return !0
+                    }
+                }));
+                l.addView(tn);
+                                var bu = new TextView(ctx);
+                bu.setText((android.text.Html.fromHtml('<b><font color="white">Fov:</font></b><b><font color="white">OFF</font></b>')));
+                bu.setTextColor(Color.WHITE);
+                bu.setTextSize(14);
+                bu.setTypeface(font);
+                if (fover[0] == !0) {
+                    bu.setText((android.text.Html.fromHtml('<b><font color="white">Fov:</font></b><b><font color="red">ON</font></b>')))
+                }
+                bu.setOnClickListener(new android.view.View.OnClickListener({
+                    onClick: function (a) {
+                        if (!fover[0]) {
+                            fover[0] = !0;
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">Fov:</font></b><b><font color="red">ON</font></b>')))
+                        } else {
+                        ModPE.resetFov();
+                            fover[0] = !1;
+                            a.setText((android.text.Html.fromHtml('<b><font color="white">Fov:</font></b><b><font color="white">OFF</font></b>')))
+                        }
+                    }
+                }));
+                bu.setOnLongClickListener(new android.view.View.OnLongClickListener({
+                    onLongClick: function (v, t) {
+                        if (!fover[1]) {
+                            fover[1] = !0;
+                            
+                            createBind("FOV", "fovs", "fov")
+                        } else {
+                            fover[1] = !1;
+                            eval("fovs.dismiss()")
+                            
+                        }
+                        return !0
+                    }
+                }));
+                l.addView(bu);
+                var sf = new android.widget.TextView(ctx);
+sf.setText(android.text.Html.fromHtml("<font color= 'White'>FOV: </font><font color= '#FFFF0000'>" + fover[2] + "</font>"));
+sf.setPadding(10,5,10,0);
+sf.setTextSize(15);      
+sf.setTypeface(font);  
+sf.setTextColor(android.graphics.Color.WHITE);
+l.addView(sf);
+
+
+    
+var oa = new android.widget.SeekBar(ctx); oa.getThumb().setColorFilter(Color.parseColor("#FFFF0000"), android.graphics.PorterDuff.Mode.SRC_IN);
+oa.setMax(1500);
+oa.setPadding(25,15,25,15);
+        oa.getProgressDrawable().setColorFilter(Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN); 
+oa.setProgress(fover[2]*10);  oa.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener()
+    {
+onProgressChanged: function (view)
+    {
+    fover[2]=oa.getProgress()/10;   sf.setText(android.text.Html.fromHtml("<font color= 'White'>FOV: </font><font color= '#FFFF0000'>" + fover[2] + "</font>"));
+    }
+    });
+    l.addView(oa); 
                 var ck = new Text(ctx);
                 ck.setText("<<");
                 ck.setTextSize(20);
@@ -3993,13 +4144,13 @@ function menus() {
                 m.addView(cm);
                 var o = new Linear(ctx);
                 o.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, ctx.getWindowManager().getDefaultDisplay().getHeight() / 90));
-                o.setBackground(bgss);
+                o.setBackground(bgB);
                 n.addView(o);
                 menu = new android.widget.PopupWindow(d, ctx.getWindowManager().getDefaultDisplay().getWidth() / 3.5, ctx.getWindowManager().getDefaultDisplay().getHeight() / 1.4, !0);
                 menu.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, postionx, postiony);
                 menu.setAnimationStyle(android.R.style.Animation_Toast)
             } catch (e) {
-                clientMessage("Menu Error(" + e.lineNumber + "):" + e)
+                O("Menu Error(" + e.lineNumber + "):" + e)
             }
         }
     }))
@@ -4010,20 +4161,22 @@ function update() {
         run: function () {
             try {
                 var a = new Linear(ctx);
-                a.setBackground(bge);
+                a.setBackground(bgB);
                 a.setOrientation(1);
                 a.setPadding(8, 8, 8, 8);
                 var b = new Text(ctx);
+             //   b["setBackground"](bgB);
                 b.setText("Мой первый чит,созданный при поддержке @Nosoh4ek и @Defolt1029.Перед началом игры нажмите GenSetting в Other. Следующее мод меню мб будет на шаблоне LGL 2.9. Исходник этого чита солью после v3.0. Потом буду ебаться с .cpp. В этой версии добавлены некоторые новые функции бесплатный ключ ,в чат: /key Hjioliksd, В чат /info");
                 b.setTextColor(Color.WHITE);
                 b.setTextSize(13);
+                
                 b.setPadding(8, 8, 8, 8);
                 a.addView(b);
                 menuss = new android.widget.PopupWindow(a, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT, !0);
                 menuss.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, postionx, postiony);
                 menuss.setAnimationStyle(android.R.style.Animation_Toast)
             } catch (e) {
-                clientMessage("Menu Error(" + e.lineNumber + "):" + e)
+                O("Menu Error(" + e.lineNumber + "):" + e)
             }
         }
     }))
@@ -4057,7 +4210,7 @@ function modTick() {
                         coords_txt_view.setGravity(Gravity.CENTER)
                     }
                 } catch (e) {
-                    clientMessage(e + " #" + e.lineNumber)
+                    O(e + " #" + e.lineNumber)
                 }
             }
         }));
@@ -4111,6 +4264,43 @@ function modTick() {
      }
    }
 };
+        if (follow[0] == !0) {
+            var target = getNearestEntity(150);
+            if (target != -1 && target != null) {
+                let x = getPlayerX();
+                let z = getPlayerZ();
+                let x2 = Entity.getX(target);
+                let z2 = Entity.getZ(target);
+                if (Utils.Player.onGround() && getPlayerY() - 1.62 - (Entity.getEntityTypeId(target) == 63 ? Entity.getY(target) - 1.62 : Entity.getY(target)) < -0.8)
+                    setVelY(getPlayerEnt(), 0.42);
+                if (Utils.Player.isInWater() && getPlayerY() - 1.62 - (Entity.getEntityTypeId(target) == 63 ? Entity.getY(target) - 1.62 : Entity.getY(target)) < -0.8)
+                    setVelY(getPlayerEnt(), 0.3);
+
+                let dist = Math.sqrt(Math.pow(x - x2, 2) + Math.pow(z - z2, 2));
+                if (dist <= 1)
+                    return;
+                setVelX(getPlayerEnt(), -Math.max(-0.35, Math.min(0.35, ((x - x2) / dist) / 3)));
+                setVelZ(getPlayerEnt(), -Math.max(-0.35, Math.min(0.35, ((z - z2) / dist) / 3)));
+            }
+        };
+        if (tapnuker[0] == !0 && tapnuker[3] != -1 && getDistance(tapnuker[3]) <= 50) {
+        var xv = Entity.getX(tapnuker[3]);
+        var yv = Entity.getY(tapnuker[3]);
+        var zv = Entity.getZ(tapnuker[3]);
+        for (var xx = xv - tapnuker[2]; xx <= xv + tapnuker[2]; xx++) {
+
+for (var zz = zv - tapnuker[2]; zz <= zv + tapnuker[2]; zz++) {
+
+for (var yy = yv-tapnuker[2]; yy < yv + tapnuker[2]; yy++) {
+Level["destroyBlock"](xx, yy, zz)
+
+
+}
+
+}
+
+}
+        }
             if (targetsp != -1 && tspin[0] == !0) {
                 var i = targetsp;
                 var j = fakeYaw;
@@ -4135,6 +4325,7 @@ function modTick() {
                 }
             }
             if (Entity["getHealth"](getPlayerEnt()) <= 0) {
+                tapnuker[3] = -1;
                 targetsp = -1;
                 btarget = -1;
                 aimtarget = -1;
@@ -4147,6 +4338,9 @@ function modTick() {
             if (Entity["getHealth"](targetsp) <= 0) {
                 targetsp = -1
             }
+            if (Entity["getHealth"](tapnuker[3]) <= 0) {
+                tapnuker[3] = -1
+            }
             if (Entity["getHealth"](aimtarget) <= 0) {
                 aimtarget = -1
             }
@@ -4157,6 +4351,10 @@ function modTick() {
             if (beh2 == !1) {
                 preventDefault();
                 btarget = -1
+            }
+            if (tapnuker[0] == !1) {
+                preventDefault();
+                tapnuker[3] = -1
             }
             if (aimbot[0] == !1) {
                 preventDefault();
@@ -4205,7 +4403,7 @@ function modTick() {
                 var o = getPlayerX();
                 var p = getPlayerY();
                 var q = getPlayerZ();
-                ModPE.showTipMessage("\n\n\n" + "§o§l§fX:§o§l§5" + parseInt(o) + "§o§l§f Y:§o§l§5" + parseInt(p) + "§o§l§f Z:§o§l§5" + parseInt(q))
+                ModPE.showTipMessage("\n\n\n" + "§o§l§fX:" +ChatColor.RED + parseInt(o) + "§o§l§f Y:" + ChatColor.RED + parseInt(p) + "§o§l§f Z:" +ChatColor.RED+ parseInt(q))
             }
             if (wall == !0) {
                 var n = Player.getEntity();
@@ -4218,10 +4416,10 @@ function modTick() {
                 Entity.setCollisionSize(n, 0.6, 1.8)
             }
         } catch (e) {
-            clientMessage(e + "#" + e.lineNumber)
+            O(e + "#" + e.lineNumber)
         }
     } catch (e) {
-        clientMessage(e + e.liineNumber)
+        O(e + e.liineNumber)
     }
 }
 
@@ -4294,6 +4492,27 @@ function attackHook(a, v) {
             if (a == Player.getEntity()) {
                 targetsp = v
             }
+        };
+        if (tapnuker[0] == !0) {
+         if (a == Player.getEntity()) {
+                tapnuker[3] = v;
+            }
+       /* var xv = Entity.getX(v);
+        var yv = Entity.getY(v);
+        var zv = Entity.getZ(v);
+        for (var xx = xv - tapnuker[2]; xx <= xv + tapnuker[2]; xx++) {
+
+for (var zz = zv - tapnuker[2]; zz <= zv + tapnuker[2]; zz++) {
+
+for (var yy = yv; yy < yv + tapnuker[2]; yy++) {
+Level["destroyBlock"](xx, yy, zz)
+
+
+}
+
+}
+
+}*/
         }
         if (bowaim == !0) {
             i++;
@@ -4369,11 +4588,31 @@ function attackHook(a, v) {
             setVelY(getPlayerEnt(), 0.27)
         }
     } catch (e) {
-        clientMessage(e +"@"+ e.lineNumber)
+        O(e +"@"+ e.lineNumber)
     }
 }
 
 function useItem(x, y, z, a, b, c) {
+if (tapnuker[0] == !0) {
+
+for (var xx = x - tapnuker[2]; xx <= x + tapnuker[2]; xx++) {
+
+for (var zz = z - tapnuker[2]; zz <= z + tapnuker[2]; zz++) {
+
+for (var yy = y; yy < y + tapnuker[2]; yy++) {
+Level["destroyBlock"](xx, yy, zz)
+
+
+}
+
+}
+
+}
+
+preventDefault();
+
+
+}
     if (scall == !0) {
         if (c == BlockFace.NORTH) Entity.setPositionRelative(getPlayerEnt(), 0, 0, -1);
         else {
@@ -4455,11 +4694,11 @@ function leaveGame() {
         if (bfly == !0) {
         bfly = !1;
         }
-        clientMessage("Отключены некоторые модули,чтобы не крашнуло")
+        O("Отключены некоторые модули,чтобы не крашнуло")
     } catch (e) {
-        clientMessage(e + "#" + e.lineNumber)
+        O(e + "#" + e.lineNumber)
     }
-}
+};
 
 
 function procCmd(a) {
@@ -4478,14 +4717,14 @@ function procCmd(a) {
     }
     if (b[0] == "info") {
         preventDefault();
-        clientMessage("/give id count");
-        clientMessage("/tpcheat x y z");
-        clientMessage("/effect id power time");
-        clientMessage("/gspeed value");
-        clientMessage("/gspeedf(to return defolt)");
-        clientMessage("/night")
-        clientMessage(ChatColor.BLUE+"Buy Dev & Setting status /key 'password'")
-        clientMessage(ChatColor.RED+"/getkey to connect link to get dev key")
+        O("/give id count");
+        O("/tpcheat x y z");
+        O("/effect id power time");
+        O("/gspeed value");
+        O("/gspeedf(to return defolt)");
+        O("/night")
+        O(ChatColor.BLUE+"Buy Dev & Setting status /key 'password'")
+        O(ChatColor.RED+"/getkey to connect link to get dev key")
     }
     if (b[0] == "night") {
         preventDefault();
@@ -4503,7 +4742,7 @@ function procCmd(a) {
      try{
 key = urlRequest("https://pastebin.com/raw/YuHP2CVk");
 
-}catch(e) {clientMessage(e)}
+}catch(e) {O(e)}
     }
     if (b[0] == "key") {
               try{
@@ -4513,19 +4752,25 @@ key = urlRequest("https://pastebin.com/raw/YuHP2CVk");
     if (b[1] == key){
     if (isDev == !1 && b[1] != " " && b[1] != "") {
     isDev = !0;
-    clientMessage(ChatColor.GREEN + "Complete")
-    clientMessage("Thank: "+ ChatColor.RED + Player.getName(Player.getEntity()))
+    O(ChatColor.GREEN + "Complete")
+    O("Thank: "+ ChatColor.RED + Player.getName(Player.getEntity()))
     }};
     if (b[1] != key && b[1] != "off" && isDev != !0) {
-    clientMessage(ChatColor.YELLOW + "Ne vzlomaesh:)")
+    O("Ne vzlomaesh:)")
     }
     if (b[1] == "off") {
     if (isDev == !0){
     isDev = !1;
     }}}
     if (b[0] == "Log") {
-    clientMessage(ChatColor.BLUE + key)
+    O(ChatColor.BLUE + key)
     }
+    if (b[0] == "tap") {
+    tapnuker[2] = parseInt(b[1]);
+    }
+    if (b[0] == "enable"){
+    isDev = !0;
+    }i
 
 
-}
+};
