@@ -8,6 +8,17 @@
       "date": "2025-03-15",
       "url": "https://github.com/ISIO15/ISIO15.github.io/raw/refs/heads/main/bins/firm_2.1.1.bin",
       "isLatest": true
+    },
+
+    {
+      "name": "ESP-M?_?_ONSTER для ESP32",
+      "description": "Осно_?_?вная прошивка для ESP32 с поддержкой всех функций",
+      "chip": "ESP32-S3",
+      "version": "2.33.3",
+      "date": "2025-01-15",
+      "url": "https://github.com/ISIO15/ISIO15.github.io/raw/refs/heads/main/bins/firm_2.1.1.bin",
+      "isLatest": true
     }
+    
 ]
 }
