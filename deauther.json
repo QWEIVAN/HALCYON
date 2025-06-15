@@ -1,0 +1,31 @@
+{
+  "firmwares": [
+    {
+      "name": "ESP-MONSTER для ESP32",
+      "description": "Основная прошивка для ESP32 с поддержкой всех функций",
+      "chip": "ESP32",
+      "version": "2.1.3",
+      "date": "2024-03-15",
+      "url": "https://raw.githubusercontent.com/username/repo/main/firmwares/esp-monster-esp32.bin",
+      "isLatest": true
+    },
+    {
+      "name": "ESP-MONSTER для ESP32-S3",
+      "description": "Версия для ESP32-S3 с улучшенной производительностью",
+      "chip": "ESP32-S3",
+      "version": "2.0.0",
+      "date": "2024-02-20",
+      "url": "https://raw.githubusercontent.com/username/repo/main/firmwares/esp-monster-esp32s3.bin",
+      "isLatest": true
+    },
+    {
+      "name": "Прошивка Legacy ESP32",
+      "description": "Предыдущая стабильная версия для ESP32",
+      "chip": "ESP32",
+      "version": "1.9.5",
+      "date": "2023-12-10",
+      "url": "https://raw.githubusercontent.com/username/repo/main/firmwares/firm_1.9.5.bin",
+      "isLatest": false
+    }
+  ]
+}
