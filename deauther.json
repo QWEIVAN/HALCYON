@@ -9,7 +9,7 @@
       "url": "https://github.com/ISIO15/ISIO15.github.io/raw/refs/heads/main/bins/firm_2.1.1.bin",
       "isLatest": false,
       "manifest" : "https://raw.githubusercontent.com/CatDevCode/CatOs_webflasher/refs/heads/main/webflash/manifest.json"
-    }
+    },
       {
       "name": "ESP-M?_?_ONSTER для ESP32",0
       "description": "Осно_?_?вная прошивка для ESP32 с поддержкой всех функций",
@@ -17,7 +17,7 @@
       "version": "2.55757.3",
       "url": "https://github.com/ISIO15/ISIO15.github.io/raw/refs/heads/main/bins/firm_2.1.1.bin",
       "manifest" : "https://raw.githubusercontent.com/CatDevCode/CatOs_webflasher/refs/heads/main/webflash/manifest.json"
-    }
+    },
       {
       "name": "ESP-M?_?_ONSTER для ESP32",
       "description": "Осно_?_?вная прошивка для ESP32 с поддержкой всех функций",
