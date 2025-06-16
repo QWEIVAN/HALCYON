@@ -11,7 +11,7 @@
       "manifest" : "https://raw.githubusercontent.com/CatDevCode/CatOs_webflasher/refs/heads/main/webflash/manifest.json"
     },
       {
-      "name": "ESP-M?_?_ONSTER для ESP32",0
+      "name": "ESP-M?_?_ONSTER для ESP32",
       "description": "Осно_?_?вная прошивка для ESP32 с поддержкой всех функций",
       "chip": "ESP32-S3",
       "version": "2.55757.3",
