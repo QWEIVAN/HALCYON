@@ -1,16 +1,6 @@
 {
   "firmwares": [
     {
-      "name": "ESP-MONSTER для ESP32",
-      "description": "Основная прошивка для ESP32 с поддержкой всех функций",
-      "chip": "ESP32",
-      "version": "2.1.3",
-      "url": "https://github.com/ISIO15/ISIO15.github.io/raw/refs/heads/main/bins/firm_2.1.1.bin",
-      "manifest": "https://raw.githubusercontent.com/CatDevCode/CatOs_webflasher/refs/heads/main/webflash/manifest.json",
-      "isLatest": false
-    },
-
-    {
       "name": "ESP-M?_?_ONSTER для ESP32",
       "description": "Осно_?_?вная прошивка для ESP32 с поддержкой всех функций",
       "chip": "ESP32-S3",
